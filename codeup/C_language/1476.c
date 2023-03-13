@@ -24,14 +24,27 @@ void print_numberbox (int** arr, int row, int col){
 }
 
 void input_numberbox (int** arr, int row, int col){
-    int input, num, intger = 1;
+    int intger = 1;
+    int subrow = 0, addcol = 0;
+    int colmax = 0, num = 0;
     
-    for(input = 0; input < row; input++){
-        for(num = 0; num <= input; num++){
-            arr[input - num][num] = intger;
-            intger++;
-        }
-    }
+    while(intger <= row * col){
+		for(subrow, addcol; addcol + num <= colmax; num++){
+	    	arr[subrow - num][addcol + num] = intger;
+	    	intger++;
+	    }
+	    num = 0;
+	    if(subrow < row - 1){
+	    	subrow++;
+		}
+		else{
+			addcol++;
+		}
+		
+		if(colmax < col - 1){
+			colmax++;
+		}
+	}
 }
 
 int** dynamic_memory_array (int** arr, int row, int col){
