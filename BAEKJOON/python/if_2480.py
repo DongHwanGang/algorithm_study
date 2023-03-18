@@ -13,6 +13,10 @@ elif b == c:
     dice = b
     cnt += 1
     
+elif c == a:
+    dice = c
+    cnt += 1
+    
 else:
     if a < b:
         if b < c:
