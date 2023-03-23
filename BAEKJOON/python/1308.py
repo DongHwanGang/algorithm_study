@@ -1,6 +1,6 @@
 def sum_day(year, month, day):
     arr_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    sum_days = sum(arr_month[0:month]) + day
+    sum_days = sum(arr_month[0:month - 1]) + day
     
     if month > 2:
         if year % 4 == 0:
@@ -14,10 +14,18 @@ def sum_day(year, month, day):
 year1, month1, day1 = map(int, input().split())
 year2, month2, day2 = map(int, input().split())
 
-if year2 - year1 > 1000 or (year2 - year1 >= 1000 and month2 >= month1 and day2 >= day1):
+if year1 + 1000 < year2:
     print('gg')
     exit()
-
+elif year1 + 1000 == year2:
+    if month1 < month2:
+        print('gg')
+        exit()
+    elif month1 == month2:
+        if day1 <= day2:
+            print('gg')
+            exit()
+            
 sum_days1 = sum_day(year1, month1, day1)
 sum_days2 = sum_day(year2, month2, day2)
 
