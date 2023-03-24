@@ -37,4 +37,5 @@ if year2 - year1 > 0:
     for i in range(year2, year1, -1):
         sum_days2 = sum_day(i, 13, sum_days2)
 
-print('D-{0}'.format(sum_days2 - sum_days1))    
+print('D-{0}'.format(sum_days2 - sum_days1))  
+#아직 못품  

@@ -1,2 +1,5 @@
 githubtoken.txt
 *.exe
+*.ilk
+*.obj
+*.pdb
