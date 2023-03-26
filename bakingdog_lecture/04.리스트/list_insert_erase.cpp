@@ -19,7 +19,12 @@ void insert(int addr, int num){
 }
 
 void erase(int addr){
-    
+    if(nxt[addr] != -1){
+      pre[nxt[addr]] = pre[addr];
+    }
+    nxt[pre[addr]] = nxt[addr];
+
+    dat[addr] = nxt[addr] = pre[addr] = -1;
 }
 
 void traverse(){
