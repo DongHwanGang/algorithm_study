@@ -1,1 +1,3 @@
-        // for(char password:key) cout<<password;
+    // while(arr.size() != 0){
+
+    // }
