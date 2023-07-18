@@ -1,0 +1,22 @@
+N = int(input())
+
+if N <= 10**3-1:
+    print(N)
+elif N <= 10**4-1:
+    temp = N % 10
+    print(N -temp)
+elif N <= 10**5-1:
+    temp = N % 100
+    print(N - temp)
+elif N <= 100**6-1:
+    temp = N % 1000
+    print(N-temp)
+elif N <= 100**7-1:
+    temp = N % 10000
+    print(N-temp)
+elif N <= 100**8-1:
+    temp = N % 100000
+    print(N-temp)
+else:
+    temp = N % 1000000
+    print(N-temp)
