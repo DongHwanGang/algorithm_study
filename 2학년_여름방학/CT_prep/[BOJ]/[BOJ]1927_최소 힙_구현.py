@@ -15,9 +15,9 @@ def min_heap(num: int) -> None:
         if in_num == 0 and length == 0:
             print(0)
         elif in_num == 0 and length != 0:
-            delete = heap[1]
+            delete = heap.pop(1)
             print("%d" %delete)
-            heap = delete_heap(heap, delete, length)
+            heap = delete_heap(heap, delete, length - 1)
             length = length - 1
         else:
             heap = insert_heap(heap, in_num, length)
@@ -26,24 +26,28 @@ def min_heap(num: int) -> None:
 def insert_heap(heap: list, data: int, length: int) -> list:
     parent: int = length + 1
 
-    while parent != 1 and data > heap[parent//2]:
-        heap[parent] = heap[parent//2]
+    while parent != 1 and data < heap[parent//2]:
+        heap.insert(parent, heap[parent//2]) 
         parent //= 2
-    heap[parent] = data
+    heap.insert(parent, data)
 
     return heap
 
 def delete_heap(heap: list, delete: int, length: int) -> list:
     child: int = 2
     last: int = heap[length + 1]
+    
     while child <= length:
-        if child < length and heap[child] < heap[child+1]:
+        if child < length and heap[child] > heap[child+1]:
             child += 1
-        if last >= heap[child]:
+        if last <= heap[child]:
             break
         heap[child//2] = heap[child]
         child *=2
-    heap[child//2] = last
+
+    heap.insert(child//2, last)
+    print(heap)
+    return heap
     
 if __name__ == "__main__":
     main()
